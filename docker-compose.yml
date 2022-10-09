@@ -50,7 +50,7 @@ services:
       - amqpdata:/var/lib/rabbitmq
     restart: always
   opencti:
-    image: private.docker.filigran.io/opencti/platform:5.3.16-lts
+    image: private.docker.filigran.io/opencti/platform:5.3.17-lts
     environment:
       - NODE_OPTIONS=--max-old-space-size=8096
       - APP__PORT=8080
@@ -85,7 +85,7 @@ services:
       - rabbitmq
     restart: always
   worker:
-    image: private.docker.filigran.io/opencti/worker:5.3.16-lts
+    image: private.docker.filigran.io/opencti/worker:5.3.17-lts
     environment:
       - OPENCTI_URL=http://opencti:8080
       - OPENCTI_TOKEN=${OPENCTI_ADMIN_TOKEN}
@@ -97,7 +97,7 @@ services:
       replicas: 3
     restart: always
   connector-export-file-stix:
-    image: private.docker.filigran.io/opencti/connector-export-file-stix:5.3.16-lts
+    image: private.docker.filigran.io/opencti/connector-export-file-stix:5.3.17-lts
     environment:
       - OPENCTI_URL=http://opencti:8080
       - OPENCTI_TOKEN=${OPENCTI_ADMIN_TOKEN}
@@ -111,7 +111,7 @@ services:
     depends_on:
       - opencti
   connector-export-file-csv:
-    image: private.docker.filigran.io/opencti/connector-export-file-csv:5.3.16-lts
+    image: private.docker.filigran.io/opencti/connector-export-file-csv:5.3.17-lts
     environment:
       - OPENCTI_URL=http://opencti:8080
       - OPENCTI_TOKEN=${OPENCTI_ADMIN_TOKEN}
@@ -125,7 +125,7 @@ services:
     depends_on:
       - opencti
   connector-export-file-txt:
-    image: private.docker.filigran.io/opencti/connector-export-file-txt:5.3.16-lts
+    image: private.docker.filigran.io/opencti/connector-export-file-txt:5.3.17-lts
     environment:
       - OPENCTI_URL=http://opencti:8080
       - OPENCTI_TOKEN=${OPENCTI_ADMIN_TOKEN}
@@ -139,7 +139,7 @@ services:
     depends_on:
       - opencti
   connector-import-file-stix:
-    image: private.docker.filigran.io/opencti/connector-import-file-stix:5.3.16-lts
+    image: private.docker.filigran.io/opencti/connector-import-file-stix:5.3.17-lts
     environment:
       - OPENCTI_URL=http://opencti:8080
       - OPENCTI_TOKEN=${OPENCTI_ADMIN_TOKEN}
@@ -155,7 +155,7 @@ services:
     depends_on:
       - opencti
   connector-import-document:
-    image: private.docker.filigran.io/opencti/connector-import-document:5.3.16-lts
+    image: private.docker.filigran.io/opencti/connector-import-document:5.3.17-lts
     environment:
       - OPENCTI_URL=http://opencti:8080
       - OPENCTI_TOKEN=${OPENCTI_ADMIN_TOKEN}
